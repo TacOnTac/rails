@@ -1,5 +1,6 @@
 class Page < ApplicationRecord
   belongs_to :category
+  belongs_to :country
   has_one_attached :image, dependent: :destroy
 
 

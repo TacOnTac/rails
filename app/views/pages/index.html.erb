@@ -10,6 +10,7 @@
       <th>Titre</th>
       <th>Slug</th>
       <th>Category</th>
+      <th>Country</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +22,8 @@
         <td><%= page.nom %></td>
         <td><%= page.titre %></td>
         <td><%= page.slug %></td>
-        <td><%= page.category_id %></td>
+        <td><%= page.category.nom %></td>
+        <td><%= page.country&.name %></td>
         <td><%= link_to 'Show', page %></td>
         <td><%= link_to 'Edit', edit_page_path(page) %></td>
         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>

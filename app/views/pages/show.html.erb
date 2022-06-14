@@ -28,7 +28,12 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @page.category.nom %>
+  <%= @page.category&.nom %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @page.country&.name %>
 </p>
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
