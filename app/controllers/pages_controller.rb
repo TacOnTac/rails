@@ -3,7 +3,14 @@ class PagesController < ApplicationController
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all.with_attached_image
+    if params[:category_id] != nil
+      @pages = Page.where(category_id: params[:category_id])
+    else
+      @pages = Page.all.with_attached_image
+    end
+
+    @categories = Category.all
+    page = Page.find(1)
   end
 
   # GET /pages/1 or /pages/1.json
